@@ -62,9 +62,9 @@ public class Server {
 
             for(int i = 0; i < tasks.size(); i++){
                 int task = i + 1;
-                Task tareaRecovery = tasks.get(i);
-                String taskDescriptionRecovery = tareaRecovery.getTaskDescription();
-                String taskStatusRecovery = tareaRecovery.getTaskStatus();
+                Task taskRecovery = tasks.get(i);
+                String taskDescriptionRecovery = taskRecovery.getTaskDescription();
+                String taskStatusRecovery = taskRecovery.getTaskStatus();
 
                 sendData.writeUTF("The task number " + task + " has the description " + taskDescriptionRecovery + " and the status " + taskStatusRecovery);
 
