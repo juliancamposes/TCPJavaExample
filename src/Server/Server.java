@@ -47,11 +47,11 @@ public class Server {
             String taskStatus;
 
             for(int i  = 0; i < numberOfTask; i++){
-                int tarea = i + 1;
-                sendData.writeUTF("Write the description of the task number " + tarea);
+                int task = i + 1;
+                sendData.writeUTF("Write the description of the task number " + task);
                 taskDescription = getData.readUTF();
 
-                sendData.writeUTF("Write the status of the task number " + tarea);
+                sendData.writeUTF("Write the status of the task number " + task);
                 taskStatus = getData.readUTF();
 
                 Task tareaUser = new Task(taskDescription, taskStatus);
@@ -61,12 +61,12 @@ public class Server {
             sendData.writeUTF("Sending tasks...");
 
             for(int i = 0; i < tasks.size(); i++){
-                int tarea = i + 1;
-                Task tareaRecuperada = tasks.get(i);
-                String taskDescriptionRecovery = tareaRecuperada.getTaskDescription();
-                String taskStatusRecovery = tareaRecuperada.getTaskStatus();
+                int task = i + 1;
+                Task tareaRecovery = tasks.get(i);
+                String taskDescriptionRecovery = tareaRecovery.getTaskDescription();
+                String taskStatusRecovery = tareaRecovery.getTaskStatus();
 
-                sendData.writeUTF("The task number " + tarea + " has the description " + taskDescriptionRecovery + " and the status " + taskStatusRecovery);
+                sendData.writeUTF("The task number " + task + " has the description " + taskDescriptionRecovery + " and the status " + taskStatusRecovery);
 
             }
             System.out.println("End of the communication");
